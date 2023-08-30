@@ -1,0 +1,24 @@
+
+Font name:
+Poppins
+
+******color******
+primary-color: #d51c9a
+secondary-color: #0F0F10
+
+other colors:
+"#ffffff",
+"#acaeae",
+"rgba(157, 10, 110, 0.12)",
+"#888888",
+"#B1B4B2",
+"#009754",
+"#000000"
+
+body background color "#010101"
+
+
+
+
+
+

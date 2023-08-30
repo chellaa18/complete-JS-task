@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/edit.css" />
+  </head>
+  <body>
+    <!-- header sec -->
+    <header>
+      <nav class="navbar navbar-expand-lg bg-transparent">
+        <div class="container">
+          <a class="navbar-brand text-white flex-grow-1" href="#">
+            <img
+              src="/images/logo.png"
+              alt="Logo"
+              width="100"
+              height="30"
+              class="d-inline-block align-text-top"
+          /></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="sidebar offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          ></div>
+          <h3 style="color: rgb(245, 8, 146)">Edit Products</h3>
+        </div>
+      </nav>
+    </header>
+    <!-- header sec ends  -->
+    <div
+      class="container d-flex justify-content-center align-items-center vh-100"
+    >
+      <div class="row">
+        <div class="col">
+          <form id="edit-form">
+            <h2 style="color: rgb(245, 8, 146)">Edit Items Here</h2>
+            <div class="mb-3">
+              <label for="productId" class="form-label">Product Id</label>
+              <input
+                type="text"
+                id="productId"
+                name="productId"
+                class="form-control"
+                value=""
+                disabled
+              />
+            </div>
+            <div class="mb-3">
+              <label for="productName" class="form-label">Product Name</label>
+              <input
+                type="text"
+                id="productName"
+                name="productName"
+                class="form-control"
+                value=""
+              />
+            </div>
+            <div class="mb-3">
+              <label for="productQty" class="form-label"
+                >Product Quantity</label
+              >
+              <input
+                type="number"
+                id="productQty"
+                name="productQty"
+                class="form-control"
+                value=""
+              />
+            </div>
+            <div class="mb-3">
+              <label for="productMrp" class="form-label">Product MRP</label>
+              <input
+                type="number"
+                step="0.01"
+                id="productMrp"
+                name="productMrp"
+                class="form-control"
+                value=""
+              />
+            </div>
+            <div class="mb-3">
+              <label for="productMrp" class="form-label">Product Sp</label>
+              <input
+                type="number"
+                step="0.01"
+                id="productSp"
+                name="productSp"
+                class="form-control"
+                value=""
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script>
+      let editProducts = JSON.parse(localStorage.getItem("edit"));
+      console.log(editProducts);
+      editProducts.forEach((product) => {
+        document.getElementById("productId").value = product.productId;
+        document.getElementById("productName").value = product.productName;
+        document.getElementById("productQty").value = product.productQty;
+        document.getElementById("productMrp").value = product.productMrp;
+        document.getElementById("productSp").value = product.productSp;
+      });
+
+      document.getElementById("edit-form").addEventListener("submit", (e) => {
+        e.preventDefault();
+        let editProducts = JSON.parse(localStorage.getItem("edit"));
+        let existProducts = JSON.parse(localStorage.getItem("products"));
+        id = document.getElementById("productId").value;
+        updateRow(id);
+      });
+
+      function updateRow(data) {
+        let existProducts = JSON.parse(localStorage.getItem("products"));
+
+        let formProductId = parseInt(data);
+        console.log(formProductId);
+        let index = existProducts.findIndex((product) => {
+          return product.productId == data;
+        });
+
+        console.log("Index:", index);
+        if (index !== -1) {
+          existProducts[index].productName =
+            document.getElementById("productName").value;
+          existProducts[index].productQty =
+            document.getElementById("productQty").value;
+          existProducts[index].productMrp =
+            document.getElementById("productMrp").value;
+          existProducts[index].productSp =
+            document.getElementById("productSp").value;
+          localStorage.setItem("products", JSON.stringify(existProducts));
+          console.log("Product updated successfully.");
+          window.location.href = "/products.html";
+        } else {
+          console.log("Product not found.");
+        }
+      }
+    </script>
+  </body>
+</html>

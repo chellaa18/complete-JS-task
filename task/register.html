@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/reg.css" />
+  </head>
+  <body>
+       <!-- header sec -->
+   <header>
+    <nav class="navbar navbar-expand-lg bg-transparent">
+      <div class="container">
+        <a class="navbar-brand text-white flex-grow-1" href="#">
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            width="100"
+            height="30"
+            class="d-inline-block align-text-top"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="sidebar offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        ></div>
+        <h3 style="color: rgb(245, 8, 146)">Registration Page</h3>
+      </div>
+    </nav>
+  </header>
+  <!-- header sec ends  -->
+    <!-- form section  -->
+    <div id="reg-form" class="container">
+      <div
+        class="row w-100 d-flex justify-content-center align-items-center mt-2"
+      >
+        <form id="registrationform" class="col-lg-4 form mb-3 w-50">
+          <h2>Registration</h2>
+          <hr style="color: #d51c9a" />
+          <label class="mb-1" for="uname">Username:</label> <br />
+          <input type="text" id="uname" required /> <br />
+          <label class="mt-2 mb-1" for="fname">Firstname:</label> <br />
+          <input type="text" id="fname" required /> <br />
+          <label class="mt-2 mb-1" for="lname">Lastname: </label><br />
+          <input type="text" id="lname" required /> <br />
+          <label class="mt-2 mb-1" for="email">Enter your email:</label><br />
+          <input type="email" id="email" name="email" required/> <br />
+          <p class="mt-2 mb-1" for="gender" style="color: #d51c9a" >Gender: </p>
+          <input
+            class="p-2"
+            value="male"
+            type="radio"
+            name="gender"
+            checked
+          />Male 
+          <input type="radio" value="female" name="gender" />Female
+          <div class="password-field">
+            <label class="mt-2 mb-1" for="pwd">Passowrd: </label><br />
+            <input type="password" id="pwd" required /> <br />
+            <span
+              ><i id="toggler2" class="far fa-eye" onclick="showPass()"></i
+            ></span>
+          </div>
+          <div class="password-field">
+            <label class="mt-2 mb-1" for="cnfrmpwd">Confirm Passowrd: </label
+            ><br />
+            <input type="password" id="cnfrmpwd" required /> <br />
+            <span
+              ><i id="toggler3" class="far fa-eye" onclick="showPass2()"></i
+            ></span>
+          </div>
+
+          <label class="mt-2 mb-1" for="mobil">Mobile: </label><br />
+          <input type="number" id="mobil" maxlength="10" /><br />
+          <label class="mt-2 mb-1" for="date">Registration Date: </label><br />
+          <input id="date" disabled/> <br />
+
+          <button type="submit" class="btn nav-button">submit</button>
+          <p id="err" style="color: red"></p>
+          <p id="err2" style="color: red"></p>
+        </form>
+      </div>
+    </div>
+    <!-- form section ends    -->
+<!-- Footer  -->
+<section class="mt-5" id="footer">
+  <div class="container">
+    <div class="row pt-2 d-flex justify-content-between">
+      <div class="col-lg-2 col-md-6 p-2">
+        <a class="navbar-brand text-white" href="#">
+          <img
+            src="/images/logo.png"
+            alt="Logo"
+            width="100"
+            height="30"
+            class="d-inline-block mt-3 mb-4"
+        /></a>
+        <p class="">
+          Lorem ipsum dolor sit amet consectetur <br />
+          adipisicing elit. Lore
+        </p>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 p-2">
+        <h6 class="text-white mb-4 mt-3">Features</h6>
+        <a role="button">Others</a>
+        <a role="button">Game</a>
+        <a role="button">Art</a>
+        <a role="button">Defi</a>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 p-2">
+        <h6 class="text-white mb-4 mt-3">Services</h6>
+        <a role="button">About</a>
+        <a role="button">My Home Page</a>
+        <a role="button">My Nft's</a>
+        <a role="button">Account Settings</a>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 p-2">
+        <h6 class="text-white mb-4 mt-3">Info</h6>
+        <a role="button">Faq</a>
+        <a role="button">Terms</a>
+        <a role="button">privacy policy</a>
+        <a role="button">News</a>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 p-2">
+        <h6 class="text-white mb-4 mt-3">Community</h6>
+        <a role="button">Facebook</a>
+        <a role="button">Twitter</a>
+        <a role="button">Instagram</a>
+        <a role="button">Youtube</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Footer Ends -->
+    <script type="text/javascript" src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/reg.js"></script>
+  </body>
+</html>

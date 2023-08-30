@@ -1,0 +1,35 @@
+body{
+    background-color: black;
+}
+th,td{
+    border: 1px solid #d51c9a;
+    padding: 15px;
+    color: #d51c9a;
+}
+
+.nav-button {
+    margin-right: 10px;
+    color: #d51c9a;
+    background-color: #010101;
+    font-size: 16px !important;
+    font-weight: 900;
+    border-image: linear-gradient(to left, #fc01ac, rgb(13, 227, 255)) 1;
+    padding: 8px 10px 8px 10px;
+  }
+
+ /* Footer  */
+#footer {
+    background-color: #161515;
+  }
+  #footer p {
+    color: #9b9a9a;
+  }
+  #footer a {
+    color: #9b9a9a;
+    font-weight: 400;
+    font-size: 14px;
+    padding-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+  }
+  
